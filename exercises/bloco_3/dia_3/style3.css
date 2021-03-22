@@ -1,0 +1,19 @@
+h1, p{
+  text-align: center;
+}
+
+ol, ul{
+  list-style: none;
+}
+
+ol:hover{
+  background-color: rgb(68, 131, 110);
+}
+
+ol li:hover{
+  background-color: aqua;
+}
+
+li:active{
+  font-family: sans-serif;
+}
