@@ -5,7 +5,7 @@ for (let i = 0; i < numbers.length; i+=1) {
   sum += numbers[i];
 }
 
-mean = sum/numbers.length
+mean = sum/numbers.length;
 
 console.log(mean);
 
