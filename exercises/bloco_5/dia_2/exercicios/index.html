@@ -98,6 +98,12 @@
         list.appendChild(listItem);
       }
       right.appendChild(list);
+      // Exerc 9
+      for (let index = 0; index < 3; index += 1) {
+        let h3Title = document.createElement('h3');
+        h3Title.innerText = 'Texto ' + (index+1);
+        main.appendChild(h3Title);
+      }
     </script>
   </body>
 </html>
