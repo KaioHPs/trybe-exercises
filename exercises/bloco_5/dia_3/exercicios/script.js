@@ -140,12 +140,12 @@ function newTaskSubtitle(stringColor) {
   tasksContainer.appendChild(taskDiv);
 }
 
-newTaskSubtitle('rgb(245,250,245)');
+newTaskSubtitle('brown');
 
 // Exercicio 9
+let taskSelected = false;
 function selectTask() {
   let taskDiv = document.querySelector('.task');
-  let taskSelected = false;
   taskDiv.addEventListener('click', function() {
     if (!taskSelected) {
       taskDiv.classList.add('selected');
@@ -160,3 +160,31 @@ function selectTask() {
 }
 
 selectTask();
+
+// Exercicio 10
+function daySelect() {
+  let allDays = document.querySelectorAll('.day');
+  let selectedDayBool = [];
+  for (let index = 0; index < allDays.length; index += 1) {
+    let day = allDays[index];
+    selectedDayBool[index] = false;
+    day.addEventListener('click', function(event) {
+      if (taskSelected) {
+        let selectedDiv;
+        let selectedTaskColor;
+        selectedDiv = document.querySelector('.selected');
+        selectedTaskColor = selectedDiv.style.backgroundColor;
+        if (!selectedDayBool[index]) {
+          day.style.color = selectedTaskColor;
+          selectedDayBool[index] = true;
+        } else if (selectedDayBool[index]) {
+          day.style.color = 'rgb(119,119,119)';
+          selectedDayBool[index] = false;
+        }
+      }
+      
+    })
+  }
+}
+
+daySelect();
