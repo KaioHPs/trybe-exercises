@@ -80,14 +80,16 @@ createFridayButton('Sexta-feira');
 
 // Exercicio 5
 let fridaysBool = false;
-let fridayDaysArray = [];
 function fridayOverlay() {
   let fridayButton = document.querySelector('#btn-friday');
   let fridays = document.getElementsByClassName('friday');
+  let fridayDaysArray = [];
+  for (const friday of fridays) {
+    fridayDaysArray.push(friday.innerText)
+  }
   fridayButton.addEventListener('click', function(){
     if (!fridaysBool) {
       for (let friday of fridays) {
-        fridayDaysArray.push(friday.innerText)
         friday.innerText = 'SEXTOU!';
         fridaysBool = true;
       }
@@ -96,9 +98,26 @@ function fridayOverlay() {
         fridays[index].innerText = fridayDaysArray[index];
         fridaysBool = false;
       }
-      fridayDaysArray = [];
     }
   })
 }
 
 fridayOverlay();
+
+// Exercicio 6
+function dayZoom() {
+  let allDays = document.querySelectorAll('.day');
+  let intialFontSize = allDays[0].style.fontSize;
+  for (let day of allDays) {
+  day.addEventListener('mouseover', function(event) {
+    overlayedDay = event.target;
+    overlayedDay.style.fontSize = 'x-large';
+  })
+  day.addEventListener('mouseout', function(event) {
+    overlayedDay = event.target;
+    overlayedDay.style.fontSize = intialFontSize;
+  })
+  }
+}
+
+dayZoom();
