@@ -141,3 +141,22 @@ function newTaskSubtitle(stringColor) {
 }
 
 newTaskSubtitle('rgb(245,250,245)');
+
+// Exercicio 9
+function selectTask() {
+  let taskDiv = document.querySelector('.task');
+  let taskSelected = false;
+  taskDiv.addEventListener('click', function() {
+    if (!taskSelected) {
+      taskDiv.classList.add('selected');
+      taskSelected = true;
+      console.log(taskDiv);
+    } else if (taskSelected) {
+      taskDiv.classList.remove('selected');
+      taskSelected = false;
+      console.log(taskDiv);
+    }
+  }) 
+}
+
+selectTask();
