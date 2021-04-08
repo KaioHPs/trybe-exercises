@@ -121,3 +121,13 @@ function dayZoom() {
 }
 
 dayZoom();
+
+// Exercicio 7
+let tasksContainer = document.querySelector('.my-tasks');
+function newTask(string) {
+  taskSpan = document.createElement('span');
+  taskSpan.innerText = string;
+  tasksContainer.appendChild(taskSpan);
+}
+
+newTask('Cozinhar');
