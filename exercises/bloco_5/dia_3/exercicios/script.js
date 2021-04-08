@@ -45,3 +45,25 @@ function createHolidayButton(string) {
 }
 
 createHolidayButton('Feriados');
+
+// Exercicio 3
+let holidaysBool = false;
+function holidayOverlay() {
+  let holidayButton = document.querySelector('#btn-holiday');
+  let holidayDays = document.getElementsByClassName('holiday');
+  holidayButton.addEventListener('click', function(){
+    if (!holidaysBool) {
+      for (let holiday of holidayDays) {
+        holiday.style.backgroundColor = 'rgb(245,250,245)';
+        holidaysBool = true;
+      }
+    } else if (holidaysBool) {
+      for (let holiday of holidayDays) {
+        holiday.style.backgroundColor = 'rgb(238,238,238)';
+        holidaysBool = false;
+      }
+    }
+  })
+}
+
+holidayOverlay();
