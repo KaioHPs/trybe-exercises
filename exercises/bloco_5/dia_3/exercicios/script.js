@@ -36,8 +36,8 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 
 // Exercicio 2
+let buttonContainer = document.querySelector('.buttons-container');
 function createHolidayButton(string) {
-  let buttonContainer = document.querySelector('.buttons-container');
   let holidayButton = document.createElement('button');
   holidayButton.innerText = string;
   holidayButton.id = 'btn-holiday'
@@ -67,3 +67,13 @@ function holidayOverlay() {
 }
 
 holidayOverlay();
+
+// Exercicio 4
+function createFridayButton(string) {
+  let fridayButton = document.createElement('button');
+  fridayButton.innerText = string;
+  fridayButton.id = 'btn-friday'
+  buttonContainer.appendChild(fridayButton);
+}
+
+createFridayButton('Sexta-feira');
