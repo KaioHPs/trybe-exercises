@@ -131,3 +131,13 @@ function newTask(string) {
 }
 
 newTask('Cozinhar');
+
+// Exercicio 8
+function newTaskSubtitle(stringColor) {
+  taskDiv = document.createElement('div');
+  taskDiv.style.backgroundColor = stringColor;
+  taskDiv.classList.add('task');
+  tasksContainer.appendChild(taskDiv);
+}
+
+newTaskSubtitle('rgb(245,250,245)');
