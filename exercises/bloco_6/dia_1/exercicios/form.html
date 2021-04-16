@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicios 6.1</title>
+</head>
+<body>
+  <form action="" method="get">
+    <fieldset>
+      <div class="form-line">
+       <label for="nome-input">Nome</label>
+      <input type="text" maxlength="40" id="nome-input" required> 
+      </div>
+      <div class="form-line">
+        <label for="email-input">Email</label>
+        <input type="text" maxlength="50" id="email-input" required>
+      </div>
+      <div class="form-line">
+        <label for="cpf-input">CPF</label>
+        <input type="text" maxlength="11" id="cpf-input" required>
+      </div>
+      <div class="form-line">
+        <label for="end-input">Endereço</label>
+        <input type="text" maxlength="200" id="end-input" required>
+      </div>
+      <div class="form-line">
+        <label for="cid-input">Cidade</label>
+        <input type="text" maxlength="28" id="cid-input" required>
+      </div>
+      <div class="form-line">
+        <label for="est-input">Estado</label>
+        <select name="estado" id="est-combobox" required>
+        </select>
+      </div>
+      <div class="form-line">
+        <p>Tipo:</p>
+        <label for="casa-radio">
+          <input type="radio" name="tipo-endereco" id="casa-radio" value="casa" required>Casa
+        </label>
+        <label for="apto-radio">
+          <input type="radio" name="tipo-endereco" id="apto-radio" value="endereço" required >Apartamento
+        </label>
+      </div>
+    </fieldset>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
