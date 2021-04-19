@@ -14,3 +14,18 @@ function createStates() {
 }
 
 createStates();
+
+function checkDate(){
+  const dateString = document.querySelector('#data-input').value;
+  if (dateString.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)) {
+    const r = /\d+/g;
+    let nums = dateString.match(r).map(Number);
+    console.log(nums);
+    let day = num[0];
+    let month = num[1];
+    let year = num[2];
+    if (day <= 0 || day > 31 || month <= 0 || month > 12 || year < 0) {
+      alert('Data inválida')
+    }
+  }
+}
