@@ -6,7 +6,7 @@
   <title>Exercicios 6.1</title>
 </head>
 <body>
-  <form action="" method="get">
+  <form id="form" name="form" action="" method="get">
     <fieldset>
       <legend>Dados Pessoais</legend>
       <div class="form-line">
@@ -61,9 +61,10 @@
       </div>
       <div class="form-line">
         <label for="data-input">Data de inicio</label>
-        <input id="data-input" type="text" name="data-inicio" placeholder="dd/mm/aaaa" required> 
+        <input id="data-input" type="text" name="data-inicio" placeholder="dd/mm/aaaa" maxlength="10" required> 
       </div>
     </fieldset>
+    <button id="sendData-button">Enviar</button>
   </form>
   <script src="script.js"></script>
 </body>

@@ -1,4 +1,8 @@
+const form = document.querySelector('#form');
 const stateComboBox = document.querySelector('#est-combobox');
+const btnSendData = document.querySelector('#sendData-button');
+const inputDate = document.querySelector('#data-input');
+const body = document.querySelector('body');
 
 function createStates() {
   const brazilianStates = ['Acre', 'Alagoas', 'Amazonas', 'Amapá', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rondônia', 'Rio Grande do Sul', 'Roraima', 'Santa Catarina', 'Sergipe', 'São Paulo', 'Tocantins'];
@@ -16,16 +20,38 @@ function createStates() {
 createStates();
 
 function checkDate(){
-  const dateString = document.querySelector('#data-input').value;
-  if (dateString.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)) {
-    const r = /\d+/g;
-    let nums = dateString.match(r).map(Number);
-    console.log(nums);
-    let day = num[0];
-    let month = num[1];
-    let year = num[2];
-    if (day <= 0 || day > 31 || month <= 0 || month > 12 || year < 0) {
-      alert('Data inválida')
+  const dateString = inputDate.value;
+  let isDateValid = false;
+  if (dateString) {
+    if (dateString.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)) {
+      const r = /\d+/g;
+      let nums = dateString.match(r).map(Number);
+      let day = nums[0];
+      let month = nums[1];
+      let year = nums[2];
+      if (day > 0 && day <= 31 && month > 0 && month <= 12 && year > 0) {
+        isDateValid = true;
+      }
     }
   }
+  if (!isDateValid) {
+    alert('Data inválida');
+  } else {
+    alert('Data válida');
+  }
 }
+
+function generateDataDiv() {
+  const infoDiv = document.createElement('div');
+  body.appendChild('infoDiv');
+}
+
+function SendDataButton() {
+  btnSendData.addEventListener('click', (event) => {
+    console.log(stateComboBox.value);
+    event.preventDefault();
+    checkDate();
+  });
+}
+
+SendDataButton();
