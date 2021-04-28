@@ -11,6 +11,7 @@ const inputRole = document.querySelector('#cargo-input');
 const inputRoleDescription = document.querySelector('#desc-cargo-input');
 const inputDate = document.querySelector('#data-input');
 const btnSendData = document.querySelector('#sendData-button');
+const btnDeleteData = document.querySelector('#deleteData-button');
 
 function createStates() {
   const brazilianStates = ['Acre', 'Alagoas', 'Amazonas', 'Amapá', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rondônia', 'Rio Grande do Sul', 'Roraima', 'Santa Catarina', 'Sergipe', 'São Paulo', 'Tocantins'];
@@ -74,6 +75,7 @@ function generateDataDiv() {
   const values = readValues();
   if (values) {
     const infoDiv = document.createElement('div');
+    infoDiv.id = 'div-info';
     body.appendChild(infoDiv);
     const strings = ['Nome:', 'Email:', 'CPF:', 'Endereço:', 'Cidade:', 'Estado:', 'Tipo:', 'Resumo do currículo:', 'Último cargo:', 'Descrição do cargo:', 'Data de inicio:'];
     for (let index = 0; index < values.length; index += 1) {
@@ -87,11 +89,24 @@ function generateDataDiv() {
   return;
 }
 
-function SendDataButton() {
+function sendDataButton() {
   btnSendData.addEventListener('click', (event) => {
     event.preventDefault();
     generateDataDiv();
   });
 }
 
-SendDataButton();
+sendDataButton();
+
+function deleteDataButton() {
+  btnDeleteData.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.reset();
+    const infoDiv = document.querySelector('#div-info');
+    if (infoDiv) {
+      infoDiv.remove();
+    }
+  });
+}
+
+deleteDataButton();
