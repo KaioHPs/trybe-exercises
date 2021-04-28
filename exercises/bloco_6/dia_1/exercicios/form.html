@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicios 6.1</title>
+</head>
+<body>
+  <form id="form" name="form" action="" method="get">
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <div class="form-line">
+        <label for="nome-input">Nome</label>
+        <input id="nome-input" type="text" name="nome" maxlength="40" required> 
+      </div>
+      <div class="form-line">
+        <label for="email-input">Email</label>
+        <input id="email-input" type="text" name="email" maxlength="50" required>
+      </div>
+      <div class="form-line">
+        <label for="cpf-input">CPF</label>
+        <input id="cpf-input" type="text" name="cpf" maxlength="11" required>
+      </div>
+      <div class="form-line">
+        <label for="end-input">Endereço</label>
+        <input id="end-input" type="text" name="endereco" maxlength="200" required>
+      </div>
+      <div class="form-line">
+        <label for="cid-input">Cidade</label>
+        <input id="cid-input" type="text" name="cidade" maxlength="28" required>
+      </div>
+      <div class="form-line">
+        <label for="est-combobox">Estado</label>
+        <select id="est-combobox" name="estado" required>
+        </select>
+      </div>
+      <div class="form-line">
+        <p>Tipo:</p>
+        <label for="casa-radio">
+          <input id="casa-radio" type="radio" name="tipo-endereco" value="casa" required>Casa
+        </label>
+        <label for="apto-radio">
+          <input id="apto-radio" type="radio" name="tipo-endereco" value="endereco" required >Apartamento
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Dados do Último Emprego</legend>
+      <div class="form-line">
+        <label for="">Resumo do currículo:</label>
+        <textarea id="resume-textarea" name="resumo" maxlength="1000" cols="30" rows="10" placeholder="" required>
+        </textarea>
+      </div>
+      <div class="form-line">
+        <label for="cargo-input">Cargo</label>
+        <input id="cargo-input" type="text" name="cargo" maxlength="40" required> 
+      </div>
+      <div class="form-line">
+        <label for="desc-cargo-input">Descrição do cargo</label>
+        <input id="desc-cargo-input" type="text" name="descricao-cargo" maxlength="500" required> 
+      </div>
+      <div class="form-line">
+        <label for="data-input">Data de inicio</label>
+        <input id="data-input" type="text" name="data-inicio" placeholder="dd/mm/aaaa" maxlength="10" required> 
+      </div>
+    </fieldset>
+    <button id="sendData-button">Enviar</button>
+    <button id="deleteData-button">Limpar</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
