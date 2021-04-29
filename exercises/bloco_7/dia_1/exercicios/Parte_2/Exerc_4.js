@@ -12,9 +12,15 @@ function addSkills(string) {
   for (let index = 0; index < skillsAlphabetic.length; index += 1) {
     const skill = skillsAlphabetic[index];
     if (index === (skillsAlphabetic.length - 1)) {
-      string2 = `${string2} ${skill}.`;
+      string2 = `${string2}
+      
+      ${skill};
+      
+      #goTrybe`;
     } else {
-      string2 = `${string2} ${skill};`;
+      string2 = `${string2}
+      
+      ${skill};`;
     }
   }
   return string2;
