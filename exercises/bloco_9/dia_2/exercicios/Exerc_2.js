@@ -18,6 +18,7 @@ const fetchPromise = () => {
     const divisionArray = [2,3,5,10];
     return divisionArray.map((divisor) => sum/divisor );
   })
+  .then((array) => array.reduce((result, num) => result + num, 0))
   .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
 }
 
